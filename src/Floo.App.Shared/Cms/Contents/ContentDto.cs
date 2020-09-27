@@ -1,24 +1,29 @@
-﻿
+﻿using Floo.App.Shared.Cms.Articles;
+using Floo.App.Shared.Cms.Comments;
+using Floo.App.Shared.Cms.Questions;
+using Floo.App.Shared.Cms.SpecialColumns;
+using Floo.App.Shared.Cms.Tags;
+using Floo.App.Shared.Identity.User;
+using System.Collections.Generic;
+
 namespace Floo.App.Shared.Cms.Contents
 {
     public class ContentDto : BaseDtoWithDatetime<long?>
     {
-        public string Title { get; set; }
+        public string Text { get; set; }
 
-        public string Slug { get; set; }
+        public ContentType Type { get; set; }
 
-        public string Summary { get; set; }
+        public UserDto Author { get; set; }
 
-        public string Contnet { get; set; }
+        public ArticleDto Article { get; set; }
 
-        public string Cover { get; set; }
+        public QuestionDto Question { get; set; }
 
-        public string Source { get; set; }
+        public ICollection<TagDto> Tags { get; set; }
 
-        public long? ChannelId { get; set; }
+        public ICollection<ColumnDto> Columns { get; set; }
 
-        public string Author { get; set; }
-
-        public long? SpecialColumnId { get; set; }
+        public ICollection<CommentDto> Comments { get; set; }
     }
 }
